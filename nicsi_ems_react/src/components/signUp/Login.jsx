@@ -1,20 +1,28 @@
-import { Button, Group, Paper, Stack, TextInput } from "@mantine/core";
+import {
+    Button,
+    Group,
+    Paper,
+    PasswordInput,
+    Stack,
+    TextInput,
+} from "@mantine/core";
 import { upperFirst } from "@mantine/hooks";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import {
+    // IconCloudLockOpen,
+    IconEyeCheck,
+    IconEyeOff,
+    IconLock,
+    IconUser,
+} from "@tabler/icons-react";
 
 const Login = ({ type }) => {
     const LoginSchema = Yup.object().shape({
         email: Yup.string()
-
-            // Format Validation
             .email("Invalid email address format")
-
-            // Required Field Validation
             .required("Email is required"),
         password: Yup.string()
-
-            //Minimum Character Validation
             .min(3, "Password must be 3 characters at minimum")
             .required("Password is required"),
     });
@@ -22,32 +30,71 @@ const Login = ({ type }) => {
         <>
             <Formik
                 initialValues={{ email: "", password: "" }}
-                // validate={(values) => {
-                //     const errors = {};
-                //     if (!values.email) {
-                //         errors.email = "Required";
-                //     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-                //         errors.email = "Invalid email address";
-                //     } else if (!values.password) {
-                //         errors.password = "Required";
-                //     }
-                //     return errors;
-                // }}
                 validationSchema={LoginSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     setSubmitting(false);
                     console.log(values);
                 }}
             >
-                {({ values, errors, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
+                {({
+                    values,
+                    errors,
+                    handleChange,
+                    handleBlur,
+                    handleSubmit,
+                    isSubmitting,
+                }) => (
                     <Paper radius="md" p="xl" withBorder>
                         <form onSubmit={handleSubmit}>
                             <Stack>
-                                <TextInput type="text" name="email" onChange={handleChange} onBlur={handleBlur} value={values.email} error={errors.email} />
-                                <TextInput type="password" name="password" onChange={handleChange} onBlur={handleBlur} value={values.password} error={errors.password} />
+                                <TextInput
+                                    label="Email"
+                                    type="text"
+                                    name="email"
+                                    icon={<IconUser size="1rem" />}
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.email}
+                                    error={errors.email}
+                                    placeholder="email"
+                                    description="Please enter your registered email id."
+                                    withAsterisk
+                                />
+                                <PasswordInput
+                                    label="Password"
+                                    name="password"
+                                    icon={<IconLock size="1rem" />}
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.password}
+                                    error={errors.password}
+                                    placeholder="password"
+                                    description="Please enter your EMS password."
+                                    withAsterisk
+                                    visibilityToggleIcon={({ reveal, size }) =>
+                                        reveal ? (
+                                            <IconEyeOff size={size} />
+                                        ) : (
+                                            <IconEyeCheck size={size} />
+                                        )
+                                    }
+                                />
 
                                 <Group position="apart" mt="xl">
-                                    <Button type="submit" fullWidth mt="xl" disabled={isSubmitting}>
+                                    {/* <Button
+                                        variant="light"
+                                        fullWidth
+                                        leftIcon={<IconCloudLockOpen />}
+                                        type="button"
+                                    >
+                                        Forget Password
+                                    </Button> */}
+                                    <Button
+                                        type="submit"
+                                        fullWidth
+                                        mt="xl"
+                                        disabled={isSubmitting}
+                                    >
                                         {upperFirst(type)}
                                     </Button>
                                 </Group>
