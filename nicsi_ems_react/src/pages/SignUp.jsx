@@ -28,23 +28,13 @@ const SignUp = () => {
                     {type === "register" ? "Welcome" : "Welcome back!"}
                 </Title>
                 <Text color="dimmed" size="sm" align="center" mt={5}>
-                    <Anchor
-                        component="button"
-                        type="button"
-                        color="dimmed"
-                        onClick={() => toggle()}
-                        size="sm"
-                        mb={10}
-                        style={{ textDecoration: "none" }}
-                    >
-                        {type === "register"
-                            ? "Already have an account? Login"
-                            : "Don't have an account? Register"}
+                    <Anchor component="button" type="button" color="dimmed" onClick={() => toggle()} size="sm" mb={10} style={{ textDecoration: "none" }}>
+                        {type === "register" ? "Already have an account? Login" : "Don't have an account? Register"}
                     </Anchor>
                 </Text>
 
                 {type === "login" && <Login type={type} />}
-                {type === "register" && <Registration type={type} />}
+                {type === "register" && <Registration type={type} toggle={toggle} />}
             </div>
         </>
     );

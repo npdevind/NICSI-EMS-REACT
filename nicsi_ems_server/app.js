@@ -4,6 +4,7 @@ const path = require("path");
 const apiRouter = require("./routes/api");
 const webRouter = require("./routes/web");
 const morgan = require("morgan");
+const cross = require("cors");
 
 const app = express();
 
@@ -18,6 +19,8 @@ app.use(morgan("common"));
 
 app.use("/api/v1", apiRouter);
 app.use(webRouter);
+
+app.use(cross);
 
 app.listen(PORT, () => {
     console.log(`Server is Listening on: ${PORT}`);

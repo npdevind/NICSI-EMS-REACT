@@ -1,6 +1,6 @@
-const Pool = require("pg");
+const pg = require("pg");
 
-const con = new Pool({
+const con = new pg.Pool({
     user: process.env.DB_USER,
     host: process.env.DB_HOST,
     database: process.env.DB_DATABASE,
