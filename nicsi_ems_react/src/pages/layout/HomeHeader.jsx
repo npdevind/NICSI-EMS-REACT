@@ -86,7 +86,7 @@ const HomeHeader = () => {
                 <Container>
                     <div className={classes.inner}>
                         {/* <MantineLogo size={28} /> */}
-                        <h5>NICSI-EMS</h5>
+                        <h5 className="text-3xl font-bold underline">NICSI-EMS</h5>
                         <Group spacing={5} className={classes.links}>
                             {links.map((link) => (
                                 <Link key={link.label} to={link.link} className={classes.link}>

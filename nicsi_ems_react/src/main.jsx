@@ -5,7 +5,7 @@ import router from "./router";
 import store from "./app/store";
 import { Provider } from "react-redux";
 import { Notifications } from "@mantine/notifications";
-import "./scss/HomeScss.scss";
+import "../src/index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 const queryClient = new QueryClient();
 

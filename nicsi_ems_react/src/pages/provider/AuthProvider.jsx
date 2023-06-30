@@ -18,7 +18,6 @@ const AuthProvider = () => {
             if (!user.isLogIn && token) {
                 setError(null);
                 setLoading(true);
-                console.log("token=>" + token);
                 try {
                     const res = await fetch(process.env.APP_BASE_API + "/user", {
                         method: "GET",
@@ -28,7 +27,6 @@ const AuthProvider = () => {
                             Authorization: "Bearer " + token,
                         },
                     });
-                    console.log(res);
                     if (res.ok) {
                         const data = await res.json();
                         console.log(data);
