@@ -1,9 +1,25 @@
-import { Button, Group, Loader, Modal, Paper, PasswordInput, Stack, TextInput } from "@mantine/core";
+import {
+    Button,
+    Group,
+    Loader,
+    Modal,
+    Paper,
+    PasswordInput,
+    Stack,
+    TextInput,
+} from "@mantine/core";
 import { isEmail, isNotEmpty, useForm } from "@mantine/form";
 import { upperFirst, useDisclosure } from "@mantine/hooks";
 import { notifications } from "@mantine/notifications";
 import { useDispatch } from "react-redux";
-import { IconAlertSquare, IconCloudLockOpen, IconEyeCheck, IconEyeOff, IconLock, IconUser } from "@tabler/icons-react";
+import {
+    IconAlertSquare,
+    IconCloudLockOpen,
+    IconEyeCheck,
+    IconEyeOff,
+    IconLock,
+    IconUser,
+} from "@tabler/icons-react";
 import { useState } from "react";
 import { login } from "../../app/Slices/UserSlice";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -93,8 +109,28 @@ const Login = ({ type }) => {
             <Paper radius="md" p="xl" withBorder>
                 <form onSubmit={form.onSubmit((values) => submitLogin(values))}>
                     <Stack>
-                        <TextInput label="Email" type="text" name="email" icon={<IconUser size="1rem" />} {...form.getInputProps("email")} withAsterisk />
-                        <PasswordInput label="Password" name="password" icon={<IconLock size="1rem" />} withAsterisk visibilityToggleIcon={({ reveal, size }) => (reveal ? <IconEyeOff size={size} /> : <IconEyeCheck size={size} />)} {...form.getInputProps("password")} />
+                        <TextInput
+                            label="Email"
+                            type="text"
+                            name="email"
+                            icon={<IconUser size="1rem" />}
+                            {...form.getInputProps("email")}
+                            withAsterisk
+                        />
+                        <PasswordInput
+                            label="Password"
+                            name="password"
+                            icon={<IconLock size="1rem" />}
+                            withAsterisk
+                            visibilityToggleIcon={({ reveal, size }) =>
+                                reveal ? (
+                                    <IconEyeOff size={size} />
+                                ) : (
+                                    <IconEyeCheck size={size} />
+                                )
+                            }
+                            {...form.getInputProps("password")}
+                        />
 
                         <Group position="apart" mt="xl">
                             <Button
@@ -110,7 +146,7 @@ const Login = ({ type }) => {
                             >
                                 Forget Password
                             </Button>
-                            <Button type="submit" fullWidth mt="xl">
+                            <Button type="submit" fullWidth>
                                 {loading ? <Loader /> : upperFirst(type)}
                             </Button>
                         </Group>
@@ -127,7 +163,12 @@ const Login = ({ type }) => {
                 }}
                 style={{ width: "88%" }}
             >
-                <TextInput label="Your Email" description="Please enter your register emil id." placeholder="email" withAsterisk />
+                <TextInput
+                    label="Your Email"
+                    description="Please enter your register emil id."
+                    placeholder="email"
+                    withAsterisk
+                />
                 <Button type="submit" fullWidth mt="xl">
                     Submit
                 </Button>

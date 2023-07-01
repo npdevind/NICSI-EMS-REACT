@@ -1,4 +1,4 @@
-const authModel = require("../models/authModel")
+const authModel = require("../models/authModel");
 
 exports.login = async (req, res) => {
     try {
@@ -6,8 +6,8 @@ exports.login = async (req, res) => {
         res.send({
             status: true,
             message: "You are successfully login.",
-            data: loginUser
-        })
+            data: loginUser,
+        });
     } catch (error) {
         res.status(400).send({ message: error.message });
     }
@@ -19,16 +19,17 @@ exports.registration = async (req, res) => {
         res.send({
             status: true,
             message: "You are successfully registered.",
-            data: addNewUser
-        })
+            data: addNewUser,
+        });
     } catch (error) {
         res.status(400).send({ message: error.message });
     }
-}
+};
 
 exports.getUserData = async (req, res) => {
     const userDetails = await authModel.userDetails({ email: req.user?.email });
-    if (!userDetails) return res.status(403).json({ message: "Unauthenticated" });
+    if (!userDetails)
+        return res.status(403).json({ message: "Unauthenticated" });
     const _user = {
         id: userDetails?.uid,
         email: userDetails?.email,
@@ -36,4 +37,4 @@ exports.getUserData = async (req, res) => {
         type: userDetails?.type,
     };
     return res.json(_user);
-}
+};
