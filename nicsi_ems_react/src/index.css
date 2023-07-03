@@ -1,1 +1,23 @@
+.homeHeaderLogo {
+    width: 101.563px;
+    height: 57px;
+    position: relative;
+    right: 27px;
+}
 
+.homeHeader {
+    width: 1570px;
+    height: 68px;
+}
+
+.homeGroup {
+    justify-content: end;
+    gap: 20px;
+    position: relative;
+    bottom: 51px;
+}
+
+.homeHeaderLink {
+    text-decoration: none;
+
+}
