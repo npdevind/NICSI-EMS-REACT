@@ -1,14 +1,14 @@
 {
-  "editor.formatOnSave": true, // format code when you hit save
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.tabWidth": 2,
-  "editor.quickSuggestions": {
-    "strings": true
-  },
-  "tailwindCSS.includeLanguages": {
-    "html": "html",
-    "javascript": "javascript",
-    "css": "css",
-    "jsx": "JSX"
-  }
+    "editor.formatOnSave": true, // format code when you hit save
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.tabWidth": 4,
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "tailwindCSS.includeLanguages": {
+        "html": "html",
+        "javascript": "javascript",
+        "css": "css",
+        "jsx": "JSX"
+    }
 }
