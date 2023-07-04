@@ -1,14 +1,3 @@
 {
-    "recommendations": [
-        "dsznajder.es7-react-js-snippets",
-        "formulahendry.auto-rename-tag",
-        "aaron-bond.better-comments",
-        "dbaeumer.vscode-eslint",
-        "eamodio.gitlens",
-        "esbenp.prettier-vscode",
-        "burkeholland.simple-react-snippets",
-        "streetsidesoftware.code-spell-checker",
-        "rangav.vscode-thunder-client"
-        // "bradlc.vscode-tailwindcss"
-    ]
+  "recommendations": ["dsznajder.es7-react-js-snippets", "formulahendry.auto-rename-tag", "aaron-bond.better-comments", "dbaeumer.vscode-eslint", "eamodio.gitlens", "esbenp.prettier-vscode", "burkeholland.simple-react-snippets", "streetsidesoftware.code-spell-checker", "rangav.vscode-thunder-client"]
 }
