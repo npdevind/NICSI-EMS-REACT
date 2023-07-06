@@ -10,5 +10,6 @@
         "javascript": "javascript",
         "css": "css",
         "jsx": "JSX"
-    }
+    },
+    "cSpell.words": ["Formik"]
 }
