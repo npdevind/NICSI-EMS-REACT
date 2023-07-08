@@ -244,6 +244,7 @@ const HomeHeader = () => {
                 <div className="hidden lg:block">
                     <NavList />
                 </div>
+
                 <div className="hidden gap-2 lg:flex">
                     <Button variant="gradient" size="sm">
                         <Link to="/login">Get Started</Link>

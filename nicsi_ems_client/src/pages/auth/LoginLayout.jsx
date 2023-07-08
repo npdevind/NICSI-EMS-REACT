@@ -8,7 +8,7 @@ const LoginLayout = () => {
     return (
         <>
             {type === "login" && <Login setType={setType} />}
-            {type === "register" && <Registration type={type} />}
+            {type === "register" && <Registration setType={setType} />}
         </>
     );
 };

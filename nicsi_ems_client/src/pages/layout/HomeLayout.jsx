@@ -1,10 +1,10 @@
 import HomeHeader from "../../components/layout/HomeHeader";
 const HomeLayout = () => {
-  return (
-    <>
-      <HomeHeader />
-    </>
-  );
+    return (
+        <>
+            <HomeHeader />
+        </>
+    );
 };
 
 export default HomeLayout;
